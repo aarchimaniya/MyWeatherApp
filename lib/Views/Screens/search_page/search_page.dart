@@ -28,7 +28,7 @@ class _DetailPageState extends State<DetailPage> {
         children: [
           Positioned.fill(
             child: Image.asset(
-              'lib/assets/images/category/img.png', // Replace with your image path
+              'lib/assets/images/category/purple.jpg', // Replace with your image path
               fit: BoxFit.cover,
             ),
           ),
@@ -39,7 +39,7 @@ class _DetailPageState extends State<DetailPage> {
                 elevation: 0,
                 title: const Text(
                   'Weather Details',
-                  style: TextStyle(color: Colors.white),
+                  style: TextStyle(color: Colors.black),
                 ),
               ),
               Expanded(
@@ -57,17 +57,17 @@ class _DetailPageState extends State<DetailPage> {
                           decoration: InputDecoration(
                             labelText: "Town",
                             labelStyle: TextStyle(
-                                color: Colors.white,
+                                color: Colors.black,
                                 fontSize: 20,
                                 fontWeight: FontWeight.normal),
                             hintText: "Search for Town...",
                             enabledBorder: const OutlineInputBorder(),
-                            fillColor: Colors.white,
-                            hintStyle: TextStyle(color: Colors.white),
+                            fillColor: Colors.black,
+                            hintStyle: TextStyle(color: Colors.black),
                             focusedBorder: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(14),
                               borderSide: const BorderSide(
-                                color: Colors.white,
+                                color: Colors.black,
                                 width: 2,
                               ),
                             ),
@@ -138,7 +138,7 @@ class _DetailPageState extends State<DetailPage> {
                                     Padding(
                                       padding: const EdgeInsets.only(left: 200),
                                       child: Image.asset(
-                                        "lib/assets/images/sky.png",
+                                        "lib/assets/images/category/sky.png",
                                         height: h * 0.2,
                                       ),
                                     ),

@@ -57,7 +57,7 @@ class Details_Weather extends StatelessWidget {
                           width: w * 0.2,
                           margin: EdgeInsets.all(10),
                           decoration: BoxDecoration(
-                            color: Color(0xFF1954e8),
+                            color: Color(0xFF9abdf1),
                             borderRadius: BorderRadius.circular(40),
                             boxShadow: [
                               BoxShadow(
@@ -74,7 +74,7 @@ class Details_Weather extends StatelessWidget {
                               Text(
                                 data.hour[index]['time']
                                     .toString()
-                                    .split("${DateTime.now().day}")[1],
+                                    .split("${DateTime.now().day}")[0],
                                 style: GoogleFonts.poppins(
                                   textStyle: TextStyle(
                                     color: Colors.white,
@@ -118,10 +118,10 @@ class Details_Weather extends StatelessWidget {
                     height: h * 0.22,
                     width: w,
                     decoration: BoxDecoration(
-                      color: Color(0xff30225f),
+                      color: Color(0xFF9abdf1),
                       borderRadius: BorderRadius.circular(25),
                       border: Border.all(
-                        color: Color(0xff4c3b88),
+                        color: Color(0xFF9abdf1),
                         width: 2,
                       ),
                     ),
@@ -314,10 +314,10 @@ class Details_Weather extends StatelessWidget {
                         height: h * 0.23,
                         width: w * 0.35,
                         decoration: BoxDecoration(
-                          color: Color(0xff30225f),
+                          color: Color(0xFF9abdf1),
                           borderRadius: BorderRadius.circular(25),
                           border: Border.all(
-                            color: Color(0xff4c3b88),
+                            color: Color(0xFF9abdf1),
                             width: 2,
                           ),
                         ),
@@ -386,10 +386,10 @@ class Details_Weather extends StatelessWidget {
                         height: h * 0.25,
                         width: w * 0.45,
                         decoration: BoxDecoration(
-                          color: Color(0xff30225f),
+                          color: Color(0xFF9abdf1),
                           borderRadius: BorderRadius.circular(25),
                           border: Border.all(
-                            color: Color(0xff4c3b88),
+                            color: Color(0xFF9abdf1),
                             width: 2,
                           ),
                         ),
@@ -503,10 +503,10 @@ class Details_Weather extends StatelessWidget {
                         height: h * 0.21,
                         width: w * 0.30,
                         decoration: BoxDecoration(
-                          color: Color(0xff30225f),
+                          color: Color(0xFF9abdf1),
                           borderRadius: BorderRadius.circular(25),
                           border: Border.all(
-                            color: Color(0xff4c3b88),
+                            color: Color(0xFF9abdf1),
                             width: 2,
                           ),
                         ),

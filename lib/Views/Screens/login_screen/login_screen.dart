@@ -4,10 +4,13 @@ import 'package:get/get.dart';
 class LoginPage extends StatelessWidget {
   final TextEditingController usernameController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
+  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
-  void login() {
-    // Implement your login logic here
-    Get.offNamed('/home');
+  void login(BuildContext context) {
+    if (_formKey.currentState?.validate() ?? false) {
+      // Implement your login logic here
+      Navigator.pushReplacementNamed(context, '/home');
+    }
   }
 
   String? _validateUsername(String? value) {
@@ -27,31 +30,94 @@ class LoginPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Login'),
-      ),
-      body: Padding(
-        padding: const EdgeInsets.all(20.0),
-        child: Column(
-          children: <Widget>[
-            TextFormField(
-              controller: usernameController,
-              decoration: InputDecoration(labelText: 'Username'),
-              validator: _validateUsername,
-            ),
-            TextFormField(
-              controller: passwordController,
-              decoration: InputDecoration(labelText: 'Password'),
-              obscureText: true,
-              validator: _validatePassword,
-            ),
-            SizedBox(height: 20),
-            ElevatedButton(
-              onPressed: login,
-              child: Text('Login'),
-            ),
-          ],
-        ),
+      resizeToAvoidBottomInset: false,
+      body: Stack(
+        fit: StackFit.expand,
+        children: [
+          Image.asset(
+            "lib/assets/images/category/login.jpg",
+            fit: BoxFit.cover,
+          ),
+          Column(
+            children: [
+              AppBar(
+                title: Text('Login'),
+                backgroundColor: Colors.transparent,
+                elevation: 0,
+              ),
+              Expanded(
+                child: Center(
+                  child: Padding(
+                    padding: const EdgeInsets.all(20.0),
+                    child: Form(
+                      key: _formKey,
+                      child: Column(
+                        mainAxisSize: MainAxisSize.min,
+                        children: <Widget>[
+                          Padding(
+                            padding: const EdgeInsets.all(9.0),
+                            child: TextFormField(
+                              controller: usernameController,
+                              decoration: const InputDecoration(
+                                labelText: 'Username',
+                                labelStyle: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 18,
+                                ),
+                                enabledBorder: UnderlineInputBorder(
+                                  borderSide: BorderSide(color: Colors.white),
+                                ),
+                                focusedBorder: UnderlineInputBorder(
+                                  borderSide: BorderSide(color: Colors.white),
+                                ),
+                              ),
+                              style: TextStyle(color: Colors.white),
+                              validator: _validateUsername,
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.all(9.0),
+                            child: TextFormField(
+                              controller: passwordController,
+                              decoration: const InputDecoration(
+                                labelText: 'Password',
+                                labelStyle: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 18,
+                                ),
+                                enabledBorder: UnderlineInputBorder(
+                                  borderSide: BorderSide(color: Colors.white),
+                                ),
+                                focusedBorder: UnderlineInputBorder(
+                                  borderSide: BorderSide(color: Colors.white),
+                                ),
+                              ),
+                              style: TextStyle(color: Colors.white),
+                              obscureText: true,
+                              validator: _validatePassword,
+                            ),
+                          ),
+                          const SizedBox(height: 20),
+                          ElevatedButton(
+                            style: ButtonStyle(
+                              backgroundColor:
+                                  MaterialStateProperty.all(Colors.white),
+                            ),
+                            onPressed: () => login(context),
+                            child: const Text(
+                              'Login',
+                              style: TextStyle(color: Colors.black),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ],
       ),
     );
   }

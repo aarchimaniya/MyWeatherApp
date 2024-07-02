@@ -35,19 +35,25 @@ class _HomePageState extends State<HomePage> {
         Positioned.fill(
           child: Image.asset(
             isSun
-                ? 'lib/assets/images/category/back1.jpg'
-                : 'lib/assets/images/sky.png',
+                ? 'lib/assets/images/category/hhh.png'
+                : 'lib/assets/images/category/hhd.png',
             fit: BoxFit.cover,
           ),
         ),
         Scaffold(
           backgroundColor: Colors.transparent,
           appBar: AppBar(
-            backgroundColor: Colors.white,
-            title: Text('Home'),
+            backgroundColor: Colors.transparent,
+            title: Text(
+              'Home',
+              style: TextStyle(color: Colors.black),
+            ),
             actions: [
               IconButton(
-                icon: Icon(Icons.cloud),
+                icon: Icon(
+                  Icons.cloud,
+                  color: Colors.black,
+                ),
                 onPressed: () {
                   Navigator.push(
                     context,
@@ -59,12 +65,15 @@ class _HomePageState extends State<HomePage> {
                 },
               ),
               IconButton(
-                icon: Icon(Icons.location_on),
+                icon: Icon(
+                  Icons.location_on,
+                  color: Colors.black,
+                ),
                 onPressed: () {
                   showModalBottomSheet(
                     context: context,
                     isScrollControlled: true,
-                    backgroundColor: Color(0xFF9abdf1).withOpacity(0.4),
+                    backgroundColor: Color(0xFFf5f5f5),
                     shape: const RoundedRectangleBorder(
                       borderRadius: BorderRadius.vertical(
                         top: Radius.circular(60),
@@ -107,7 +116,10 @@ class _HomePageState extends State<HomePage> {
                 },
               ),
               IconButton(
-                icon: Icon(isSun ? Icons.wb_sunny : Icons.nightlight_round),
+                icon: Icon(
+                  isSun ? Icons.wb_sunny : Icons.nightlight_round,
+                  color: Colors.black,
+                ),
                 onPressed: () {
                   setState(() {
                     isSun = !isSun; // Toggle between sun and moon images
@@ -138,40 +150,68 @@ class _HomePageState extends State<HomePage> {
                         child: _buildWeatherImage(
                             data?.ConditionText, conditionImage),
                       ),
-                      SizedBox(height: 10),
+                      SizedBox(height: 1),
                       ShaderMask(
                         shaderCallback: (Rect bounds) {
                           return LinearGradient(
                             begin: Alignment.topCenter,
                             end: Alignment.bottomCenter,
-                            colors: <Color>[Colors.blue, Colors.green],
+                            colors: <Color>[
+                              Color(0xFF759fa1),
+                              Color(0xFFcdb3ab)
+                            ],
+                            stops: [0.0, 1.0],
+                          ).createShader(bounds);
+                        },
+                        child: Text(
+                          " ${data?.temp_c}°C",
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 55,
+                              fontStyle: FontStyle.normal,
+                              color: Colors.white),
+                        ),
+                      ),
+                      SizedBox(height: 1),
+                      ShaderMask(
+                        shaderCallback: (Rect bounds) {
+                          return LinearGradient(
+                            begin: Alignment.topCenter,
+                            end: Alignment.bottomCenter,
+                            colors: <Color>[
+                              Color(0xFF759fa1),
+                              Color(0xFFcdb3ab)
+                            ],
+                            stops: [0.0, 1.0],
+                          ).createShader(bounds);
+                        },
+                        child: Text(
+                          " ${data?.name}",
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 45,
+                              color: Colors.white),
+                        ),
+                      ),
+                      SizedBox(height: 1),
+                      ShaderMask(
+                        shaderCallback: (Rect bounds) {
+                          return LinearGradient(
+                            begin: Alignment.topCenter,
+                            end: Alignment.bottomCenter,
+                            colors: <Color>[
+                              Color(0xFF759fa1),
+                              Color(0xFFcdb3ab)
+                            ],
                             stops: [0.0, 1.0],
                           ).createShader(bounds);
                         },
                         child: Text(
                           " ${data?.country}",
                           style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 32,
-                          ),
-                        ),
-                      ),
-                      SizedBox(height: 10),
-                      Text(
-                        " ${data?.temp_c}",
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 35,
-                        ),
-                      ),
-                      SizedBox(height: 10),
-                      Text(
-                        " ${data?.name}",
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 20,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 25,
+                              color: Colors.white),
                         ),
                       ),
                     ],
@@ -188,7 +228,7 @@ class _HomePageState extends State<HomePage> {
               showModalBottomSheet(
                 context: context,
                 isScrollControlled: true,
-                backgroundColor: Color(0xFF9abdf1).withOpacity(0.4),
+                backgroundColor: Color(0xFFf5f5f5),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.vertical(
                     top: Radius.circular(60),
@@ -220,7 +260,7 @@ class _HomePageState extends State<HomePage> {
               Icons.swipe_up_alt_outlined,
               Icons.list,
             ],
-            iconSize: screenHeight * 0.045,
+            iconSize: screenHeight * 0.04,
             activeIndex: 0,
             gapWidth: screenHeight * 0.1,
             gapLocation: GapLocation.center,
@@ -232,8 +272,8 @@ class _HomePageState extends State<HomePage> {
             activeColor: Colors.white,
             backgroundGradient: LinearGradient(
               colors: [
-                Color(0xff2a2f56),
-                Color(0xff3c3e72).withOpacity(0.9),
+                Color(0xffbfc3d0),
+                Color(0xffbfc3d0).withOpacity(0.9),
               ],
             ),
             onTap: (int) {},
@@ -249,7 +289,7 @@ class _HomePageState extends State<HomePage> {
         return Transform.scale(
           scale: 1.2,
           child: Image.asset(
-            conditionImage + "lib/assets/images/sky.png",
+            "lib/assets/images/category/sunny.jpg",
             fit: BoxFit.cover,
           ),
         );
@@ -257,15 +297,16 @@ class _HomePageState extends State<HomePage> {
         return Transform.scale(
           scale: 1,
           child: Image.asset(
-            conditionImage + "lib/assets/images/sky.png",
+            "lib/assets/images/sky.png",
             fit: BoxFit.cover,
           ),
         );
       case "Partly cloudy":
-        return Transform.scale(
-          scale: 1,
+        return Container(
+          height: 10,
+          width: 10,
           child: Image.asset(
-            "lib/assets/images/sky.png",
+            "lib/assets/images/category/partcloud1.jpg",
             fit: BoxFit.cover,
           ),
         );
@@ -273,7 +314,7 @@ class _HomePageState extends State<HomePage> {
         return Transform.scale(
           scale: 1,
           child: Image.asset(
-            "lib/assets/images/sky.png",
+            "lib/assets/images/category/thuderstorm.jpg",
             fit: BoxFit.cover,
           ),
         );
@@ -281,7 +322,7 @@ class _HomePageState extends State<HomePage> {
         return Transform.scale(
           scale: 1,
           child: Image.asset(
-            "lib/assets/images/sky.png",
+            "lib/assets/images/category/overcast1.jpg",
             fit: BoxFit.cover,
           ),
         );
@@ -289,16 +330,18 @@ class _HomePageState extends State<HomePage> {
         return Transform.scale(
           scale: 1,
           child: Image.asset(
-            "lib/assets/images/sky.png",
+            "lib/assets/images/category/snowshowers.jpg",
             fit: BoxFit.cover,
           ),
         );
       case "Light rain":
-        return Transform.scale(
-          scale: 1.2,
-          child: Image.asset(
-            "lib/assets/images/sky.png",
-            fit: BoxFit.cover,
+        return Container(
+          child: Transform.scale(
+            scale: 1.2,
+            child: Image.asset(
+              "lib/assets/images/category/cloudrain.jpg",
+              fit: BoxFit.cover,
+            ),
           ),
         );
       default:
