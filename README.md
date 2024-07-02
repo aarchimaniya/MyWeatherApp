@@ -31,5 +31,11 @@
 
 - Detail: Each city or state's weather information is presented on a dedicated detail screen. This screen provides a comprehensive overview of the current weather conditions, along with additional details such as hourly and daily forecasts, precipitation chances, and sunrise/sunset times. Users can explore and analyze the weather data in depth for the selected location.
 
-## Project Technologies :
+## Instruction:
+No Copying: Do not copy code or any other content from your classmates or any other source. Plagiarism is strictly prohibited and can result in severe consequences, including academic penalties. Ensure that all the code and content in your project are original and properly attributed to the appropriate sources, if applicable.
+
+## Images:
+
+-<img src="https://github.com/aarchimaniya/MyWeatherApp/assets/128701780/d87f1146-f92b-404a-b2ad-e104988ae833" width="250">
+-<img src="https://github.com/aarchimaniya/MyWeatherApp/assets/128701780/ca6789b7-b333-4787-adec-3c8b30262156" width="250">
 
