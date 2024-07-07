@@ -43,4 +43,10 @@ No Copying: Do not copy code or any other content from your classmates or any ot
 -<img src="https://github.com/aarchimaniya/MyWeatherApp/assets/128701780/443ba96e-c2ba-4327-ac64-e57bda6307c4" width="250">
 -<img src="https://github.com/aarchimaniya/MyWeatherApp/assets/128701780/52ae0139-72eb-4a5e-98b5-ae3513e505e3" width="250">
 -<img src="https://github.com/aarchimaniya/MyWeatherApp/assets/128701780/b7ac7471-ee1e-4b18-8493-2264b2eae21e" width="250">
+-<img src="https://github.com/aarchimaniya/MyWeatherApp/assets/128701780/52ae0139-72eb-4a5e-98b5-ae3513e505e3" width="250">
+-<img src="https://github.com/aarchimaniya/MyWeatherApp/assets/128701780/7046a1d8-c988-47f2-9ddb-86f1383f6c3f" width="250">
+-<img src="https://github.com/aarchimaniya/MyWeatherApp/assets/128701780/86a9ab69-2c29-4ed0-be92-39baf6cb2989" width="250">
+-<img src="https://github.com/aarchimaniya/MyWeatherApp/assets/128701780/4d8331bf-2e3f-4499-a026-97d83c465e24" width="250">
+-<img src="https://github.com/aarchimaniya/MyWeatherApp/assets/128701780/9c7231b9-d6e9-412c-98bd-831b3ae0b661" width="250">
+
 
